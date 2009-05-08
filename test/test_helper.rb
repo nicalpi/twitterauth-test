@@ -1,5 +1,8 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+require File.expand_path(File.dirname(__FILE__) + "/factories")
+require File.dirname(__FILE__) + '/fixtures/fakeweb'
+require File.dirname(__FILE__) + '/fixtures/twitter'
 require 'test_help'
 
 class ActiveSupport::TestCase
@@ -16,7 +19,7 @@ class ActiveSupport::TestCase
   # don't care one way or the other, switching from MyISAM to InnoDB tables
   # is recommended.
   #
-  # The only drawback to using transactional fixtures is when you actually 
+  # The only drawback to using transactional fixtures is when you actually
   # need to test transactions.  Since your test is bracketed by a transaction,
   # any transactions started in your code will be automatically rolled back.
   self.use_transactional_fixtures = true
@@ -35,4 +38,26 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login_as(user)
+    id = case user
+      when false,nil then nil
+      when Symbol,String then user.id
+      when Fixnum then user
+      else user.id
+    end
+    @request.session[:user_id] = id
+  end
+def define_oauth_user_class!
+  TwitterAuth::GenericUser.send :include, TwitterAuth::OauthUser
 end
+
+  def stub_oauth!
+  TwitterAuth.stubs(:config).returns({
+    'strategy' => 'oauth',
+    'oauth_consumer_key' => 'testkey',
+    'oauth_consumer_secret' => 'testsecret'
+  })
+  define_oauth_user_class!
+end
+end
+

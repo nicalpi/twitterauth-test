@@ -4,4 +4,5 @@ tmp/**/*
 config/database.yml
 db/*.sqlite3
 tmp/*
+config/twitter_auth.yml
 

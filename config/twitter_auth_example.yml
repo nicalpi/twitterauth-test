@@ -1,7 +1,7 @@
 development:
   strategy: oauth
-  oauth_consumer_key: 01ChUPAkkIoLT15Znaiw
-  oauth_consumer_secret: wnbb1w9LvMOug5HaW0XpFTQ0qtuqktKn2Ud1aq2VK8
+  oauth_consumer_key: devkey
+  oauth_consumer_secret: devsecret
   base_url: "https://twitter.com"
   authorize_path: "/oauth/authenticate"
   api_timeout: 10
@@ -9,8 +9,8 @@ development:
   oauth_callback: "http://localhost:3000/oauth_callback"
 test:
   strategy: oauth
-  oauth_consumer_key: 01ChUPAkkIoLT15Znaiw
-  oauth_consumer_secret: wnbb1w9LvMOug5HaW0XpFTQ0qtuqktKn2Ud1aq2VK8
+  oauth_consumer_key: testkey
+  oauth_consumer_secret: testsecret
   base_url: "https://twitter.com"
   authorize_path: "/oauth/authenticate"
   api_timeout: 10
@@ -19,7 +19,7 @@ test:
 production:
   strategy: oauth
   oauth_consumer_key: prodkey
-  oauth_consumer_secret: prodsecret
+  oauth_consumer_secret: prodsecret 
   authorize_path: "/oauth/authenticate"
   base_url: "https://twitter.com"
   api_timeout: 10
