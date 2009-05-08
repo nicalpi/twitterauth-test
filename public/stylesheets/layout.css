@@ -97,3 +97,8 @@ fieldset
 	margin-bottom: 20px;
 }
 
+
+.footer ul li{
+  display:inline;
+}
+

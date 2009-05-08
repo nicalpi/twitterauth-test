@@ -4,18 +4,19 @@
   %head
     %title= @pageTitle
     %script{'type' => "text/javascript", 'src' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js'}
-    = stylesheet_link_tag "layout"
+    = stylesheet_link_tag "reset","960","layout"
   %body
 
-.header
+.header.container_16
   %h1 Twitterauth configuration example
-  %a{'href' => 'http://notgeeklycorrect.com'} Learn more at notgeeklycorrect
 
-.page
+.page.container_16
   = yield
 
-.footer
+.footer.container_16
   %ul
     %li
       %a{'href' => 'http://notgeeklycorrect.com'} Learn more at notgeeklycorrect
+    %li
+      %a{'href' => 'http://www.twitter.com/spyou'} Follow me on twitter
 
