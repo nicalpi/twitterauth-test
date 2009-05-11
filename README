@@ -6,6 +6,15 @@ Initial version of the tutorial.
 
 Integrate twitter_auth and display your friend timeline.
 
+*Installation*
+
+For more info about how to use this code, report to this tutorial
+http://www.notgeeklycorrect.com/english/2009/05/11/tutorial-how-to-use-twitter_auth-gem-in-development-mode/
+
+*Don't forget*
+
+You'll need to install gems (rake gems:install)  and to configure a database.yml and a twitter_auth.yml
+
 http://www.notgeeklycorrect.com
 http://twitter.com/spyou
 
