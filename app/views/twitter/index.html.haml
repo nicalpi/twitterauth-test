@@ -1,4 +1,4 @@
 %ul.tweets
-  - for tweet in @tweets
+  - @tweets.each do |tweet|
     %li= link_to(tweet['user']['screen_name'] + ':', 'http://twitter.com/' + tweet['user']['screen_name'], :target => '_blank') + tweet['text']
 
